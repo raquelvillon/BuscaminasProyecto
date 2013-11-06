@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Minesweeper</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Welcome to Minesweeper</string>
+    <string name="easyLevel">Beginers 9x9</string>
+    <string name="mediumLevel">Medium 16x16</string>
+    <string name="ExpertLevel">Expert 30x16</string>
+    <string name="customLevel">Custom</string>
+
+</resources>
