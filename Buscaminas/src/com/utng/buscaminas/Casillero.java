@@ -1,77 +1,54 @@
 package com.utng.buscaminas;
 
+import android.view.*;
+import android.content.Context;
+
 public class Casillero {
-     static int posicionX;
-     static int posicionY;
-     static int estado;
-     static boolean numero, mina, vacio, bandera;
-     
-     public Casillero(int posicionx, int posiciony, int estado, boolean numero, boolean mina, boolean vacio, boolean bandera){
-    	 Casillero.posicionX = posicionx;
-    	 Casillero.posicionY = posiciony;
-    	 Casillero.estado = estado;
-    	 Casillero.numero = numero;
-    	 Casillero.mina = mina;
-    	 Casillero.vacio = vacio;
-    	 Casillero.bandera = bandera;    	 
-     }
-     
-     public Casillero(){
-     }
-     
-     public static int getPosicionX() {
+     public int posicionX;
+     public int posicionY;
+     public int anchoCasilla;
+     public boolean visible = false;
+     public int contenido; /*Aqui se informara, que va a contener el casillero se este
+      						 0 - vacio
+      						 1 - mina
+      						 2 - numero
+      						 3 - bandera */
+	
+    
+     public int getPosicionX() {
 		return posicionX;
 	}
-
-	public static void setPosicionX(int posicionX) {
-		Casillero.posicionX = posicionX;
+	public void setPosicionX(int posicionX) {
+		this.posicionX = posicionX;
 	}
-
-	public static int getPosicionY() {
+	public int getPosicionY() {
 		return posicionY;
 	}
-
-	public static void setPosicionY(int posicionY) {
-		Casillero.posicionY = posicionY;
+	public void setPosicionY(int posicionY) {
+		this.posicionY = posicionY;
 	}
-
-	public static int getEstado() {
-		return estado;
+	public boolean isVisible() {
+		return visible;
 	}
-
-	public static void setEstado(int estado) {
-		Casillero.estado = estado;
+	public void setVisible(boolean visible) {
+		this.visible = visible;
 	}
-
-	public static boolean isNumero() {
-		return numero;
+	public int getContenido() {
+		return contenido;
 	}
-
-	public static void setNumero(boolean numero) {
-		Casillero.numero = numero;
+	public void setContenido(int contenido) {
+		this.contenido = contenido;
 	}
-
-	public static boolean isMina() {
-		return mina;
+     
+    public void UbicarCasilla(int x, int y){
+    	this.posicionX = x;
+    	this.posicionY = y;
+    }
+	public int getAnchoCasilla() {
+		return anchoCasilla;
 	}
-
-	public static void setMina(boolean mina) {
-		Casillero.mina = mina;
+	public void setAnchoCasilla(int anchoCasilla) {
+		this.anchoCasilla = anchoCasilla;
 	}
-
-	public static boolean isVacio() {
-		return vacio;
-	}
-
-	public static void setVacio(boolean vacio) {
-		Casillero.vacio = vacio;
-	}
-
-	public static boolean isBandera() {
-		return bandera;
-	}
-
-	public static void setBandera(boolean bandera) {
-		Casillero.bandera = bandera;
-	}     
+	     
 }
