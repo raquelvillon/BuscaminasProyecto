@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:orientation="vertical" android:gravity="center">
+   		<TextView android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceLarge" android:layout_width="wrap_content" android:text="Seleccione un nivel"></TextView>
+        <Button android:layout_height="wrap_content" android:id="@+id/buttonEasy" android:layout_width="150dip" android:text="Basico (10)" android:layout_marginTop="40dip" android:textColor="#16cb4d" android:layout_marginBottom="10dip"></Button>
+        <Button android:layout_height="wrap_content" android:id="@+id/buttonNormal" android:layout_width="150dip" android:text="Normal (20)" android:layout_marginTop="10dip" android:textColor="#f0FF00" android:layout_marginBottom="10dip"></Button>
+        <Button android:layout_height="wrap_content" android:id="@+id/buttonHard" android:layout_width="150dip" android:text="Avanzado (40)" android:layout_marginTop="10dip" android:textColor="#FF00" android:layout_marginBottom="10dip"></Button>
+   </LinearLayout>
+</LinearLayout>
