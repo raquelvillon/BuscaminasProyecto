@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FlujoActivities</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="Bienvenido">Bienvenido a Buscaminas</string>
+    <string name="facil">facil</string>
+    <string name="medio">Medio</string>
+    <string name="dificil">Dificil</string>
+    <string name="personalizado">Personalizado</string>
+    <string name="title_activity_facil">Facil</string>
+    <string name="backFM">Back</string>
+    <string name="title_activity_medio">Medio</string>
+    <string name="title_activity_dificil">Dificil</string>
+    <string name="title_activity_personalizado">Personalizado</string>
+
+</resources>
