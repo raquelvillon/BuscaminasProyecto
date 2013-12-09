@@ -7,10 +7,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MenuPrincipal" >
-
     <Button
         android:id="@+id/facil"
-        android:layout_width="100dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/bienvenido"
@@ -21,7 +20,7 @@
 
     <Button
         android:id="@+id/medio"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/facil"
         android:layout_alignRight="@+id/facil"
@@ -31,7 +30,7 @@
 
     <Button
         android:id="@+id/dificil"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/medio"
         android:layout_alignRight="@+id/medio"
@@ -42,7 +41,7 @@
 
     <Button
         android:id="@+id/personalizado"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/bienvenido"
         android:layout_below="@+id/dificil"
@@ -52,11 +51,20 @@
 
     <TextView
         android:id="@+id/bienvenido"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/facil"
         android:layout_centerHorizontal="true"
         android:text="Bievenido a Buscaminas"
         android:textSize="55sp" />
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/personalizado"
+        android:layout_marginRight="46dp"
+        android:layout_toLeftOf="@+id/dificil"
+        android:onClick="NivelFacil"
+        android:src="@drawable/buttonimageblue" />
 
 </RelativeLayout>
