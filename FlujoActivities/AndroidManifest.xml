@@ -38,6 +38,10 @@
             android:name="com.example.flujoactivities.Personalizado"
             android:label="@string/title_activity_personalizado" >
         </activity>
+        <activity
+            android:name="com.example.flujoactivities.JugarPersonalizado"
+            android:label="@string/title_activity_jugar_personalizado" >
+        </activity>
     </application>
 
 </manifest>

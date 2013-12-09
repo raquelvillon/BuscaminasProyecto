@@ -14,5 +14,12 @@
     <string name="title_activity_medio">Medio</string>
     <string name="title_activity_dificil">Dificil</string>
     <string name="title_activity_personalizado">Personalizado</string>
+    <string name="seekBarAncho" />
+    <string name="seekBarAlto" />
+    <string name="seekBarMinas" />
+    <string name="buttonJugarPersonalizado">Jugar</string>
+    <string name="title_activity_jugar_personalizado">JugarPersonalizado</string>
+    <string name="start">start</string>
+    <string name="stop">stop</string>
 
 </resources>

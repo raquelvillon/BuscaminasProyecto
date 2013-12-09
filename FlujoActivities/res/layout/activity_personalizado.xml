@@ -9,17 +9,88 @@
     tools:context=".Personalizado" >
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Personalizado" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="47dp"
+        android:text="Ancho:" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="25dp"
+        android:text="Alto:" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="27dp"
+        android:text="Minas:" />
+
     <Button
         android:id="@+id/backFM"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="RegresarMenu"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
+        android:layout_marginBottom="18dp"
+        android:layout_marginLeft="48dp"
+        android:layout_toRightOf="@+id/button1"
+        android:onClick="RegresarMenu"
         android:text="Back" />
+
+    <Button
+        android:id="@+id/buttonJugarPersonalizado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/backFM"
+        android:layout_marginLeft="21dp"
+        android:layout_toRightOf="@+id/textView2"
+        android:text="Jugar" />
+
+    <SeekBar
+        android:id="@+id/seekBarAlto"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_toRightOf="@+id/textView2" 
+        android:max="30"/>
+
+    <SeekBar
+        android:id="@+id/seekBarAncho"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView1"
+        android:layout_toRightOf="@+id/textView2"
+        android:max="21" />
+
+    <SeekBar
+        android:id="@+id/seekBarMinas"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_toRightOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/valorAncho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/seekBarAncho"
+        android:layout_toRightOf="@+id/seekBarAncho"/>
 
 </RelativeLayout>

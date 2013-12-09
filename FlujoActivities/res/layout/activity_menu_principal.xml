@@ -8,17 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MenuPrincipal" >
 
-    <TextView
-        android:id="@+id/bienvenido"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="60dp"
-        android:text="Bievenido a Buscaminas"
-        android:textSize="55sp" />
-
     <Button
         android:id="@+id/facil"
         android:layout_width="100dp"
@@ -60,5 +49,14 @@
         android:onClick="NivelPersonalizado"
         android:layout_marginRight="42dp"
         android:text="Personalizado" />
+
+    <TextView
+        android:id="@+id/bienvenido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/facil"
+        android:layout_centerHorizontal="true"
+        android:text="Bievenido a Buscaminas"
+        android:textSize="55sp" />
 
 </RelativeLayout>
