@@ -12,39 +12,57 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Personalizado extends Activity {
-	private SeekBar seekBar;
-	 private TextView textViewSeekBar;
+	private SeekBar seekBarAncho, seekBarAlto, seekBarMinas;
+	 private TextView textSeekBarAncho;
+	 private TextView textSeekBarAlto;
+	 private TextView textSeekBarMinas;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_personalizado);
-		seekBar = (SeekBar) findViewById(R.id.seekBarAncho);
-        textViewSeekBar = (TextView) findViewById(R.id.valorAncho);
-        textViewSeekBar.setText("9");
+		seekBarAncho = (SeekBar) findViewById(R.id.seekBarAncho);
+		seekBarAlto = (SeekBar) findViewById(R.id.seekBarAlto);
+		seekBarMinas = (SeekBar) findViewById(R.id.seekBarMinas);
+        textSeekBarAncho = (TextView) findViewById(R.id.valorAncho);
+        textSeekBarAncho.setText("9");
+        textSeekBarAlto = (TextView) findViewById(R.id.valorAlto);
+        textSeekBarAlto.setText("9");
+        textSeekBarMinas = (TextView) findViewById(R.id.valorMinas);
+        textSeekBarMinas.setText("10");
         
-        seekBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {            
-            
-           
+        seekBarAncho.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {            
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
-            {
-                 //la Seekbar siempre empieza en cero, si queremos que el valor mínimo sea otro podemos modificarlo
-                 textViewSeekBar.setText(progress + 9 + "");                 
-            }
+            {	 textSeekBarAncho.setText(progress + 9 + "");  }
 
 			@Override
-			public void onStartTrackingTouch(SeekBar arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
+			public void onStartTrackingTouch(SeekBar arg0) {}
 			@Override
-			public void onStopTrackingTouch(SeekBar arg0) {
-				// TODO Auto-generated method stub
-				
-			}
+			public void onStopTrackingTouch(SeekBar arg0) {}
            
-     });
+        });
+        seekBarAlto.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {            
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
+            {	 textSeekBarAlto.setText(progress + 9 + "");  }
+
+			@Override
+			public void onStartTrackingTouch(SeekBar arg0) {}
+			@Override
+			public void onStopTrackingTouch(SeekBar arg0) {}
+           
+        });
+        seekBarMinas.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {            
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
+            {	 textSeekBarMinas.setText(progress + 10 + "");  }
+
+			@Override
+			public void onStartTrackingTouch(SeekBar arg0) {}
+			@Override
+			public void onStopTrackingTouch(SeekBar arg0) {}
+           
+        });
 	}
 
 	/*
@@ -57,6 +75,10 @@ public class Personalizado extends Activity {
 */
 	public void RegresarMenu(View v){
 		Intent menu = new Intent(this, MenuPrincipal.class);
+		startActivity(menu);
+	}
+	public void JugarPersonalizado(View v){
+		Intent menu = new Intent(this, JugarPersonalizado.class);
 		startActivity(menu);
 	}
 }
