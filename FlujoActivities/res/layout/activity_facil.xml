@@ -9,18 +9,37 @@
     tools:context=".Facil" >
 
     <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nivel Facil" />
+        android:text="" />
 
+    <LinearLayout
+        android:id="@+id/layout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/button1"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:onClick="presionado"
+        android:text="Nueva Partida" />
+    
     <Button
         android:id="@+id/backFM"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="RegresarMenu"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:onClick="RegresarMenu"
         android:text="Back" />
 
 </RelativeLayout>

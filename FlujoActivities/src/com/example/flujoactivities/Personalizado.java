@@ -30,10 +30,12 @@ public class Personalizado extends Activity {
         textSeekBarMinas = (TextView) findViewById(R.id.valorMinas);
         textSeekBarMinas.setText("10");
         
+        
         seekBarAncho.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {            
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
-            {	 textSeekBarAncho.setText(progress + 9 + "");  }
+            {	 textSeekBarAncho.setText(progress + 9 + "");  
+            }
 
 			@Override
 			public void onStartTrackingTouch(SeekBar arg0) {}
