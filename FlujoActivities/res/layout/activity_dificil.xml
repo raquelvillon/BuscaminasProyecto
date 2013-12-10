@@ -24,22 +24,25 @@
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:textColor="#ffffff"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:onClick="presionado"
-        android:text="Nueva Partida" />
+        android:text="Nuevo Juego" />
     
     
     <Button
         android:id="@+id/backFM"
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="35dp"
+        android:textColor="#ffffff"
         android:onClick="RegresarMenu"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:text="Back" />
+        android:text="Menu" />
 
 </RelativeLayout>
