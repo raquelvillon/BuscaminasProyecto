@@ -14,7 +14,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" >
+        android:layout_centerHorizontal="true"
+        android:columnCount="4" >
 
         <Button
             android:id="@+id/facil"
@@ -23,19 +24,8 @@
             android:layout_alignBaseline="@+id/medio"
             android:layout_alignParentLeft="true"
             android:onClick="NivelFacil"
-            android:textColor="#ffffff"
-            android:text="Facil" />
-
-        <Button
-            android:id="@+id/dificil"
-            android:layout_width="125dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/personalizado"
-            android:layout_alignBottom="@+id/personalizado"
-            android:layout_toRightOf="@+id/medio"
-            android:textColor="#ffffff"
-            android:onClick="NivelDificil"
-            android:text="Dificil" />
+            android:text="Facil"
+            android:textColor="#ffffff" />
 
         <Button
             android:id="@+id/medio"
@@ -45,18 +35,30 @@
             android:layout_alignBottom="@+id/dificil"
             android:layout_toRightOf="@+id/facil"
             android:onClick="NivelMedio"
-            android:textColor="#ffffff"
-            android:text="Medio" />
+            android:text="Medio"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/dificil"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:onClick="NivelDificil"
+            android:text="Dificil"
+            android:textColor="#ffffff" />
 
         <Button
             android:id="@+id/personalizado"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@+id/dificil"
+            android:layout_column="3"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
             android:onClick="NivelPersonalizado"
-            android:textColor="#ffffff"
-            android:text="Personalizado" />
+            android:text="Personalizado"
+            android:textColor="#ffffff" />
     </GridLayout>
 
 </RelativeLayout>

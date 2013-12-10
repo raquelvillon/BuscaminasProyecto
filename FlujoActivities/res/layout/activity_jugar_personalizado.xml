@@ -6,37 +6,39 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/buscaminasbackground2"
     tools:context=".JugarPersonalizado" >
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Juego Personalizado" />
-
-    <Button
-        android:id="@+id/backFM"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="75dp"
-        android:layout_height="35dp"
-        android:textColor="#ffffff"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="31dp"
-        android:layout_marginRight="19dp"
-        android:onClick="RegresarPersonalizado"
-        android:text="Menu" />
 
     <Button
         android:id="@+id/nuevoJuego"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="150dp"
         android:layout_height="35dp"
-        android:textColor="#ffffff"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
         android:layout_marginLeft="29dp"
-        android:text="Nuevo Juego" />
+        android:text="Nuevo Juego"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/backFM"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="75dp"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:onClick="RegresarPersonalizado"
+        android:text="Menu"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/backFM"
+        android:layout_below="@+id/nuevoJuego"
+		android:layout_marginRight="30dp"
+        android:textColor="#ffffff"
+        android:text="Juego Personalizado"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

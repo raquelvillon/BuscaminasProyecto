@@ -6,6 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/buscaminasbackground2"
     tools:context=".Facil" >
 
     <TextView
@@ -44,5 +45,16 @@
         android:layout_alignParentRight="true"
         android:onClick="RegresarMenu"
         android:text="Menu" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/backFM"
+        android:layout_below="@+id/layout2"
+        android:layout_marginRight="30dp"
+        android:textColor="#ffffff"
+        android:text="Juego Facil"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

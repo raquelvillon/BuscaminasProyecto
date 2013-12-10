@@ -21,5 +21,6 @@
     <string name="title_activity_jugar_personalizado">JugarPersonalizado</string>
     <string name="start">start</string>
     <string name="stop">stop</string>
+    <string name="nueva_partida">Nueva Partida</string>
 
 </resources>

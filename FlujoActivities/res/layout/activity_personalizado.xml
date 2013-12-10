@@ -6,12 +6,14 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/buscaminasbackground2"			
     tools:context=".Personalizado" >
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#ffffff"
         android:text="Personalizado" />
 
     <TextView
@@ -22,6 +24,7 @@
         android:layout_below="@+id/textView2"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="47dp"
+        android:textColor="#ffffff"
         android:text="Ancho:" />
 
     <TextView
@@ -31,6 +34,7 @@
         android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="25dp"
+        android:textColor="#ffffff"
         android:text="Alto:" />
 
     <TextView
@@ -40,6 +44,7 @@
         android:layout_alignLeft="@+id/textView3"
         android:layout_below="@+id/textView3"
         android:layout_marginTop="27dp"
+        android:textColor="#ffffff"
         android:text="Minas:" />
 
     <SeekBar
@@ -48,6 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/textView3"
         android:layout_toRightOf="@+id/textView2" 
+        android:textColor="#ffffff"
         android:max="21"/>
 
     <SeekBar
@@ -56,6 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/textView1"
         android:layout_toRightOf="@+id/textView2"
+        android:textColor="#ffffff"
         android:max="21" />
 
     <SeekBar
@@ -64,6 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/textView4"
         android:layout_toRightOf="@+id/textView2" 
+        android:textColor="#ffffff"
         android:max="90" />
 
     <TextView
@@ -71,13 +79,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/seekBarAncho"
+        android:textColor="#ffffff"
         android:layout_toRightOf="@+id/seekBarAncho"/>
+    
 
     <TextView
         android:id="@+id/valorAlto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/seekBarAlto"
+        android:textColor="#ffffff"
         android:layout_toRightOf="@+id/seekBarAlto" />
 
     <TextView
@@ -85,6 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/seekBarMinas"
+        android:textColor="#ffffff"
         android:layout_toRightOf="@+id/seekBarMinas" />
 
     <Button
