@@ -29,6 +29,9 @@ public class MenuPrincipal extends Activity {
 		Intent personalizado = new Intent(this, Personalizado.class);
 		startActivity(personalizado);
 	}
-
+	public void Salir(View v){
+		Intent intent = new Intent(Intent.ACTION_MAIN); 
+		finish();
+	}
 
 }

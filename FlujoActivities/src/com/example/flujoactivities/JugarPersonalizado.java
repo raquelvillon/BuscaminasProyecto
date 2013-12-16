@@ -25,42 +25,54 @@ public class JugarPersonalizado extends Activity implements OnTouchListener{
 	int x, y;
 	private Casillero[][] casillas;
 	private boolean activo = true;
+	//Bundle bundle=getIntent().getExtras();
+	int altoP;
+	int anchoP;
+	int minasP;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		Bundle bundle=getIntent().getBundleExtra("bolsa");
+		int altoP = Integer.parseInt(bundle.getString("altoP"));
+		int anchoP = Integer.parseInt(bundle.getString("anchoP"));
+		int minasP = Integer.parseInt(bundle.getString("minasP"));
+		Toast toast = Toast.makeText(this, bundle.getString("altoP") , Toast.LENGTH_SHORT);
+        toast.show();  
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_jugar_personalizado);
+		setContentView(R.layout.activity_facil);
+		
 		LinearLayout layout = (LinearLayout) findViewById(R.id.layout2);
 		fondo = new Tablero(this);
 		fondo.setOnTouchListener(this);				  
 		layout.addView(fondo);
-		casillas = new Casillero[9][9];
-		for (int f = 0; f < 9; f++) {
-			for (int c = 0; c < 9; c++) {
+		casillas = new Casillero[altoP][anchoP];
+		for (int f = 0; f < altoP; f++) {
+			for (int c = 0; c < anchoP; c++) {
 				casillas[f][c] = new Casillero();
 			}
 		}
 		this.disponerBombas();
 		this.contarBombasPerimetro();
 	}
-
-	/*@Override
+	/*
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.jugar_personalizado, menu);
+		getMenuInflater().inflate(R.menu.medio, menu);
 		return true;
-	}*/
-	public void RegresarPersonalizado(View v){
-		Intent menu = new Intent(this, Personalizado.class);
+	}
+*/
+	public void RegresarMenu(View v){
+		Intent menu = new Intent(this, MenuPrincipal.class);
 		startActivity(menu);
 	}
 	public void presionado(View v) {
-		casillas = new Casillero[9][9];
-		for (int f = 0; f < 9; f++) {
-			for (int c = 0; c < 9; c++) {
+		casillas = new Casillero[altoP][anchoP];
+		for (int f = 0; f < altoP; f++) {
+			for (int c = 0; c < anchoP; c++) {
 				casillas[f][c] = new Casillero();
 			}
 		}
@@ -75,14 +87,13 @@ public class JugarPersonalizado extends Activity implements OnTouchListener{
 	public boolean onTouch(View v, MotionEvent event) {
 		Toast toast;
 		if (activo)
-			for (int f = 0; f < 9; f++) {
-				for (int c = 0; c < 9; c++) {
+			for (int f = 0; f < altoP; f++) {
+				for (int c = 0; c < anchoP; c++) {
 					if (casillas[f][c].dentro((int) event.getX(),
 							(int) event.getY())) {
 						casillas[f][c].destapado = true;
 						if (casillas[f][c].contenido == 80) {
-							toast=Toast.makeText(this, "Game Over",
-									Toast.LENGTH_SHORT);
+							toast=Toast.makeText(this, "Game Over", Toast.LENGTH_SHORT);
 							toast.setGravity(Gravity.CENTER, 0, 0);
 							toast.show();
 							activo = false;
@@ -93,8 +104,7 @@ public class JugarPersonalizado extends Activity implements OnTouchListener{
 				}
 			}
 		if (gano() && activo) {
-			toast=Toast.makeText(this, "Ganaste",
-					Toast.LENGTH_SHORT);
+			toast=Toast.makeText(this, "Ganaste", Toast.LENGTH_SHORT);
 			toast.setGravity(Gravity.CENTER, 0, 0);
 			toast.show();
 			
@@ -117,7 +127,7 @@ public class JugarPersonalizado extends Activity implements OnTouchListener{
 				ancho = fondo.getWidth();
 			else
 				ancho = fondo.getHeight();
-			int anchocua = ancho / 9;
+			int anchocua = ancho / 20;
 			Paint paint = new Paint();
 			paint.setTextSize(20);
 			Paint paint2 = new Paint();
@@ -127,8 +137,8 @@ public class JugarPersonalizado extends Activity implements OnTouchListener{
 			Paint paintlinea1 = new Paint();
 			paintlinea1.setARGB(255, 255, 255, 255);
 			int filaact = 0;
-			for (int f = 0; f < 9; f++) {
-				for (int c = 0; c < 9; c++) {
+			for (int f = 0; f < altoP; f++) {
+				for (int c = 0; c < anchoP; c++) {
 					casillas[f][c].fijarxy(c * anchocua, filaact, anchocua);
 					if (casillas[f][c].destapado == false)
 						paint.setARGB(153, 204, 204, 204);
@@ -148,8 +158,8 @@ public class JugarPersonalizado extends Activity implements OnTouchListener{
 							&& casillas[f][c].destapado)
 						canvas.drawText(
 								String.valueOf(casillas[f][c].contenido), c
-										* anchocua + (anchocua / 2) - 8,
-								filaact + anchocua / 2, paint2);
+										* anchocua + (anchocua / 2) - 5,
+								filaact + anchocua / 2 + 5, paint2);
 
 					if (casillas[f][c].contenido == 80
 							&& casillas[f][c].destapado) {
@@ -166,10 +176,10 @@ public class JugarPersonalizado extends Activity implements OnTouchListener{
 	}
 
 	private void disponerBombas() {
-		int cantidad = 10;
+		int cantidad = 99;
 		do {
-			int fila = (int) (Math.random() * 9);
-			int columna = (int) (Math.random() * 9);
+			int fila = (int) (Math.random() * altoP);
+			int columna = (int) (Math.random() * anchoP);
 			if (casillas[fila][columna].contenido == 0) {
 				casillas[fila][columna].contenido = 80;
 				cantidad--;
@@ -179,19 +189,19 @@ public class JugarPersonalizado extends Activity implements OnTouchListener{
 
 	private boolean gano() {
 		int cant = 0;
-		for (int f = 0; f < 9; f++)
-			for (int c = 0; c < 9; c++)
+		for (int f = 0; f < altoP; f++)
+			for (int c = 0; c < anchoP; c++)
 				if (casillas[f][c].destapado)
 					cant++;
-		if (cant == 71)
+		if (cant == 381)
 			return true;
 		else
 			return false;
 	}
 
 	private void contarBombasPerimetro() {
-		for (int f = 0; f < 9; f++) {
-			for (int c = 0; c < 9; c++) {
+		for (int f = 0; f < altoP; f++) {
+			for (int c = 0; c < anchoP; c++) {
 				if (casillas[f][c].contenido == 0) {
 					int cant = contarCoordenada(f, c);
 					casillas[f][c].contenido = cant;
@@ -210,25 +220,25 @@ public class JugarPersonalizado extends Activity implements OnTouchListener{
 			if (casillas[fila - 1][columna].contenido == 80)
 				total++;
 		}
-		if (fila - 1 >= 0 && columna + 1 < 8) {
+		if (fila - 1 >= 0 && columna + 1 < anchoP) {
 			if (casillas[fila - 1][columna + 1].contenido == 80)
 				total++;
 		}
 
-		if (columna + 1 < 9) {
+		if (columna + 1 < anchoP) {
 			if (casillas[fila][columna + 1].contenido == 80)
 				total++;
 		}
-		if (fila + 1 < 9 && columna + 1 < 9) {
+		if (fila + 1 < altoP && columna + 1 < anchoP) {
 			if (casillas[fila + 1][columna + 1].contenido == 80)
 				total++;
 		}
 
-		if (fila + 1 < 9) {
+		if (fila + 1 < altoP) {
 			if (casillas[fila + 1][columna].contenido == 80)
 				total++;
 		}
-		if (fila + 1 < 9 && columna - 1 >= 0) {
+		if (fila + 1 < altoP && columna - 1 >= 0) {
 			if (casillas[fila + 1][columna - 1].contenido == 80)
 				total++;
 		}
@@ -240,7 +250,7 @@ public class JugarPersonalizado extends Activity implements OnTouchListener{
 	}
 
 	private void recorrer(int fil, int col) {
-		if (fil >= 0 && fil < 9 && col >= 0 && col < 9) {
+		if (fil >= 0 && fil < altoP && col >= 0 && col < anchoP) {
 			if (casillas[fil][col].contenido == 0) {
 				casillas[fil][col].destapado = true;
 				casillas[fil][col].contenido = 50;

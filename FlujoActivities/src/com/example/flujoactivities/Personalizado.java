@@ -80,7 +80,15 @@ public class Personalizado extends Activity {
 		startActivity(menu);
 	}
 	public void JugarPersonalizado(View v){
-		Intent menu = new Intent(this, JugarPersonalizado.class);
-		startActivity(menu);
+		Intent juegoPersonalizado = new Intent(this, JugarPersonalizado.class);
+		Bundle bolsa= new Bundle();
+		bolsa.putString("altoP", textSeekBarAlto.getText().toString());
+		
+		bolsa.putString("anchoP", textSeekBarAncho.getText().toString());
+		bolsa.putString("minasP", textSeekBarMinas.getText().toString());
+		juegoPersonalizado.putExtra("bolsa", bolsa);
+		//Toast toast = Toast.makeText(this, textSeekBarAlto.getText().toString(), Toast.LENGTH_SHORT);
+        //toast.show();  
+		startActivity(juegoPersonalizado);
 	}
 }

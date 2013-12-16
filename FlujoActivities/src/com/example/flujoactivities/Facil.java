@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
@@ -76,6 +78,7 @@ public class Facil extends Activity implements OnTouchListener {
 							(int) event.getY())) {
 						casillas[f][c].destapado = true;
 						if (casillas[f][c].contenido == 80) {
+							mostrarBombas();
 							toast=Toast.makeText(this, "Game Over",
 									Toast.LENGTH_SHORT);
 							toast.setGravity(Gravity.CENTER, 0, 0);
@@ -119,6 +122,22 @@ public class Facil extends Activity implements OnTouchListener {
 			paint2.setTextSize(20);
 			paint2.setTypeface(Typeface.DEFAULT_BOLD);
 			paint2.setARGB(255, 0, 0, 255);
+			//-------
+			Paint paint3 = new Paint();
+			paint3.setTextSize(20);
+			paint3.setTypeface(Typeface.DEFAULT_BOLD);
+			paint3.setARGB(255, 81, 30, 158);
+			//------
+			Paint paint4 = new Paint();
+			paint4.setTextSize(20);
+			paint4.setTypeface(Typeface.DEFAULT_BOLD);
+			paint4.setARGB(255, 30, 158, 154);
+			//------
+			Paint paint5 = new Paint();
+			paint5.setTextSize(20);
+			paint5.setTypeface(Typeface.DEFAULT_BOLD);
+			paint5.setARGB(255, 20, 174, 46);
+			//-----
 			Paint paintlinea1 = new Paint();
 			paintlinea1.setARGB(255, 255, 255, 255);
 			int filaact = 0;
@@ -140,18 +159,43 @@ public class Facil extends Activity implements OnTouchListener {
 
 					if (casillas[f][c].contenido >= 1
 							&& casillas[f][c].contenido <= 8
-							&& casillas[f][c].destapado)
-						canvas.drawText(
-								String.valueOf(casillas[f][c].contenido), c
-										* anchocua + (anchocua / 2) - 8,
-								filaact + anchocua / 2, paint2);
+							&& casillas[f][c].destapado){
+						switch (casillas[f][c].contenido) {
+						case 1:
+							canvas.drawText(String.valueOf(casillas[f][c].contenido), c
+									* anchocua + (anchocua / 2) - 5,
+							filaact + anchocua / 2 + 5, paint2);
+							break;
+						case 2:
+							canvas.drawText(String.valueOf(casillas[f][c].contenido), c
+									* anchocua + (anchocua / 2) - 5,
+							filaact + anchocua / 2 + 5, paint3);
+							break;
+						case 3:
+							canvas.drawText(String.valueOf(casillas[f][c].contenido), c
+									* anchocua + (anchocua / 2) - 5,
+							filaact + anchocua / 2 + 5, paint4);
+							break;
+						case 4:
+							canvas.drawText(String.valueOf(casillas[f][c].contenido), c
+									* anchocua + (anchocua / 2) - 5,
+							filaact + anchocua / 2 + 5, paint5);
+							break;
+
+						default:
+							break;
+						}
+					}
 
 					if (casillas[f][c].contenido == 80
 							&& casillas[f][c].destapado) {
-						Paint bomba = new Paint();
+						/*Paint bomba = new Paint();
 						bomba.setARGB(255, 255, 0, 0);
 						canvas.drawCircle(c * anchocua + (anchocua / 2),
-								filaact + (anchocua / 2), 8, bomba);
+								filaact + (anchocua / 2), 8, bomba);*/
+						Bitmap bmp = BitmapFactory.decodeResource(getResources(),
+			                    R.drawable.minas);
+			            canvas.drawBitmap(bmp, c * anchocua + (anchocua / 4)-6, filaact + (anchocua / 4)-6, null);
 					}
 
 				}
@@ -250,6 +294,16 @@ public class Facil extends Activity implements OnTouchListener {
 			} else if (casillas[fil][col].contenido >= 1
 					&& casillas[fil][col].contenido <= 8) {
 				casillas[fil][col].destapado = true;
+			}
+		}
+	}
+	private void mostrarBombas(){
+		for (int f = 0; f < 9; f++) {
+			for (int c = 0; c < 9; c++) {
+				if (casillas[f][c].contenido == 80) {
+					casillas[f][c].destapado=true;
+					
+				}
 			}
 		}
 	}
